@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap" rel="stylesheet">
+    <title>Wumbo Banking</title>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCtZNzJr74dWLEcnyC-uuUXvIHIKkHsu6M",
+          authDomain: "wumbo-banking.firebaseapp.com",
+          projectId: "wumbo-banking",
+          storageBucket: "wumbo-banking.appspot.com",
+          messagingSenderId: "689061286417",
+          appId: "1:689061286417:web:6de865702bede86b9e97b0"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="redirect.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+<div class="overlay">
+    <div class="nav">
+        <a href="index.html"><img src="images/wblogohd.png" alt="Wumbo Banking" style="height: 40px; margin-top:10px; margin-left:20px">
+        <strong class="title">Wumbo Banking</strong></a>
+    </div>
+   
+    <div class="ind-container">
+        <button type="button" class="button-52" role="button" id="to-login">Log In</button>
+        <button type="button" class="button-52" role="button" id="to-register">Register</button>
+
+        <button type="button" class="button-52" role="button" id="to-account" style="display: none">Account</button>
+        <button type="button" class="button-52" role="button" id="log-out" style="display: none">Log Out</button>
+
+    </div>
+</div>
+</body>
+
+</html>
+
