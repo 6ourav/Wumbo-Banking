@@ -20,17 +20,19 @@ document.getElementById('register-form').addEventListener('submit', function (ev
             transactions: [], 
             values: []
         }
-
+        console.log(user_data)
         db.collection("users").doc(user.uid).set(user_data)
+        .then((doc) => {
+            window.location.href = "account.html"
+        })
 
 
-        window.location.href = "account.html"
 
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage)
+        alert(errorMessage)
     });
 
 
