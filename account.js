@@ -28,7 +28,7 @@ auth.onAuthStateChanged(user => {
             }
         })
         .catch((error) => {
-            console.log(error.message);
+            alert(error.message);
         });
     } else {
        window.location.href = "index.html"
@@ -76,7 +76,7 @@ document.getElementById('update-form').addEventListener('submit', function (even
 
     })
     .catch((error) => {
-        console.log(error.message);
+        alert(error.message);
     });
 
 

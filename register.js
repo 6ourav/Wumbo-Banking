@@ -1,6 +1,7 @@
 const db = firebase.firestore()
 const auth = firebase.auth()
 
+
 document.getElementById('register-form').addEventListener('submit', function (event) {
     event.preventDefault();
     // console.log("hello")
@@ -11,7 +12,6 @@ document.getElementById('register-form').addEventListener('submit', function (ev
     auth.createUserWithEmailAndPassword(email, password)
     .then((userCred) => {
         var user = userCred.user
-        console.log(user.uid)
         var user_data = {
             email: user.email,
             acc: acc,
@@ -20,13 +20,13 @@ document.getElementById('register-form').addEventListener('submit', function (ev
             transactions: [], 
             values: []
         }
-        console.log(user_data)
         db.collection("users").doc(user.uid).set(user_data)
         .then((doc) => {
             window.location.href = "account.html"
         })
-
-
+        .catch((error) => {
+            alert(error.message)
+        });
 
     })
     .catch((error) => {
@@ -35,5 +35,5 @@ document.getElementById('register-form').addEventListener('submit', function (ev
         alert(errorMessage)
     });
 
-
 })
+

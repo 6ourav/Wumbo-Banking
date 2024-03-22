@@ -28,6 +28,6 @@ document.getElementById('log-out').addEventListener('click', function (event) {
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage)
+        alert(errorMessage)
     });
 });
